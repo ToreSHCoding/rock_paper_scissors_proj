@@ -9,9 +9,6 @@
 <body>
   <h1>Rock Paper Scissors Javascript</h1>
     <script>
-    let Rock = 1;
-    let Paper = 2;
-    let Scissors = 3;
     
       function computerPlay(){
         let botHandPosition = Math.floor(Math.random()*3)+1;
@@ -20,13 +17,14 @@
           return "Rock"
         }
 
-        if (botHandPosition === 2){
+        else if (botHandPosition === 2){
           return "Paper"
         }
 
-        if (botHandPosition === 3){
+        else if (botHandPosition === 3){
           return "Scissors"
         }
+        
       }
 
       function oneRound(playerSelection, computerSelection){
@@ -34,9 +32,13 @@
         // allow the bot to enter same type of string
         // let rock = 1, let paper = 2, let scissors = 3
         // if player answer is rock
-        function capitalizeFirstLetter(playerSelection) {
-          return string.charAt(0).toUpperCase() + string.slice(1);
-        }
+        
+        // function capitalizeFirstLetter(playerSelection) {
+        //   return playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+        // }
+        
+        // capitalizeFirstLetter();
+
 
         if (playerSelection === "rock" && computerSelection === "Rock"){
           return "It is a tie."
@@ -50,9 +52,35 @@
           return "You win! Rock beats Scissors"
         }
 
+
+        if (playerSelection === "paper" && computerSelection === "Paper"){
+          return "It is a tie."
+        }
+
+        if (playerSelection === "paper" && computerSelection === "Scissors"){
+          return "You lose! Scissors beats Paper"
+        }
+
+        if (playerSelection === "paper" && computerSelection === "Rock"){
+          return "You win! Paper beats Rock"
+        }
+
+
+        if (playerSelection === "scissors" && computerSelection === "Scissors"){
+          return "It is a tie."
+        }
+
+        if (playerSelection === "scissors" && computerSelection === "Rock"){
+          return "You lose! Rock beats Scissors"
+        }
+
+        if (playerSelection === "scissors" && computerSelection === "Paper"){
+          return "You win! Scissors beats Paper"
+        }
+
       }
-    
       const computerSelection = computerPlay();
+
 
     </script>
 </body>
