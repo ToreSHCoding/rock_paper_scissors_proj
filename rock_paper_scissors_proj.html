@@ -9,77 +9,86 @@
 <body>
   <h1>Rock Paper Scissors Javascript</h1>
     <script>
-    
+      let computerScore = 0;
+      let playerScore = 0;
+      let gameRound = 1;
+
+    // bot randomly returns either rock, paper, or scissors
       function computerPlay(){
         let botHandPosition = Math.floor(Math.random()*3)+1;
 
         if (botHandPosition === 1){
-          return "Rock"
+          return "rock"
         }
 
         else if (botHandPosition === 2){
-          return "Paper"
+          return "paper"
         }
 
         else if (botHandPosition === 3){
-          return "Scissors"
+          return "scissors"
         }
         
       }
 
+      // Plays one round of RPS and returns who won
       function oneRound(playerSelection, computerSelection){
         // allow user to enter string in the form of Rock, Paper, or Scissors.
         // allow the bot to enter same type of string
         // let rock = 1, let paper = 2, let scissors = 3
         // if player answer is rock
         
-        // function capitalizeFirstLetter(playerSelection) {
-        //   return playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-        // }
-        
-        // capitalizeFirstLetter();
+        // this declaration makes computerSelection return a random value by using the computerPlay function every time the oneRound function is executed
+        computerSelection = computerPlay();
 
+        // makes the playerSelection case-insensitive
+        playerSelection = playerSelection.toLowerCase();
 
-        if (playerSelection === "rock" && computerSelection === "Rock"){
+        if (playerSelection === computerSelection){
           return "It is a tie."
         }
 
-        if (playerSelection === "rock" && computerSelection === "Paper"){
+        else if (playerSelection === "rock" && computerSelection === "paper"){
           return "You lose! Paper beats Rock"
         }
 
-        if (playerSelection === "rock" && computerSelection === "Scissors"){
+        else if (playerSelection === "rock" && computerSelection === "scissors"){
           return "You win! Rock beats Scissors"
         }
 
 
-        if (playerSelection === "paper" && computerSelection === "Paper"){
-          return "It is a tie."
-        }
 
-        if (playerSelection === "paper" && computerSelection === "Scissors"){
+        else if (playerSelection === "paper" && computerSelection === "scissors"){
           return "You lose! Scissors beats Paper"
         }
 
-        if (playerSelection === "paper" && computerSelection === "Rock"){
+        else if (playerSelection === "paper" && computerSelection === "rock"){
           return "You win! Paper beats Rock"
         }
 
+      
 
-        if (playerSelection === "scissors" && computerSelection === "Scissors"){
-          return "It is a tie."
-        }
-
-        if (playerSelection === "scissors" && computerSelection === "Rock"){
+        else if (playerSelection === "scissors" && computerSelection === "rock"){
           return "You lose! Rock beats Scissors"
         }
 
-        if (playerSelection === "scissors" && computerSelection === "Paper"){
+       else if (playerSelection === "scissors" && computerSelection === "paper"){
           return "You win! Scissors beats Paper"
         }
-
+       
       }
+      
+
+      function game(){
+        for (let i = 0; i < 5; i++){
+        
+        }
+      }
+
       const computerSelection = computerPlay();
+
+      console.log(oneRound(playerSelection, computerSelection));
+
 
 
     </script>
