@@ -9,6 +9,7 @@
 <body>
   <h1>Rock Paper Scissors Javascript</h1>
     <script>
+     
       let computerScore = 0;
       let playerScore = 0;
       let gameRound = 1;
@@ -49,33 +50,55 @@
         }
 
         else if (playerSelection === "rock" && computerSelection === "paper"){
+          computerScore +=1;
           return "You lose! Paper beats Rock"
         }
 
         else if (playerSelection === "rock" && computerSelection === "scissors"){
+          playerScore +=1;
           return "You win! Rock beats Scissors"
         }
 
 
 
         else if (playerSelection === "paper" && computerSelection === "scissors"){
+          computerScore +=1;
           return "You lose! Scissors beats Paper"
         }
 
         else if (playerSelection === "paper" && computerSelection === "rock"){
+          playerScore +=1;
           return "You win! Paper beats Rock"
         }
 
       
 
         else if (playerSelection === "scissors" && computerSelection === "rock"){
+          computerScore +=1;
           return "You lose! Rock beats Scissors"
         }
 
        else if (playerSelection === "scissors" && computerSelection === "paper"){
-          return "You win! Scissors beats Paper"
+        playerScore +=1;
+        return "You win! Scissors beats Paper"
         }
        
+        // if (
+        //   (playerSelection === "rock" && computerSelection === "paper") ||
+        //   (playerSelection === "paper" && computerSelection === "scissors") ||
+        //   (playerSelection === "scissors" && computerSelection === "rock")
+        // ){
+        //   computerScore +=1;
+        //   }
+        
+        // if (
+        //   (playerSelection === "rock" && computerSelection === "scissors") ||
+        //   (playerSelection === "paper" && computerSelection === "rock") ||
+        //   (playerSelection === "scissors" && computerSelection === "paper")
+        // ){
+        //   playerScore+=1;
+        // }
+
       }
       
 
@@ -83,6 +106,7 @@
         for (let i = 0; i < 5; i++){
         
         }
+
       }
 
       const computerSelection = computerPlay();
