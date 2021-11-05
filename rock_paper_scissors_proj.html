@@ -43,7 +43,8 @@
         computerSelection = computerPlay();
 
         // makes the playerSelection case-insensitive
-        playerSelection = playerSelection.toLowerCase();
+
+        playerSelection = prompt("Choose either Rock, Paper, or Scissors.").toLowerCase();
 
         if (playerSelection === computerSelection){
           return "It is a tie."
@@ -83,6 +84,8 @@
         return "You win! Scissors beats Paper"
         }
        
+        else 
+        return "You did not select Rock, Paper, or Scissors!"
         // if (
         //   (playerSelection === "rock" && computerSelection === "paper") ||
         //   (playerSelection === "paper" && computerSelection === "scissors") ||
@@ -100,19 +103,42 @@
         // }
 
       }
-      
 
+      // plays a first to five game and resets on either overall player win or computer win
       function game(){
-        for (let i = 0; i < 5; i++){
+        computerPlay();
         
+        while (playerScore < 6 || computerScore < 6){
+          console.log("Game " + gameRound);
+          gameRound++; 
+          console.log(oneRound(playerSelection, computerSelection));
+          
+          if (playerScore === 5){
+            playerScore = 0;
+            computerScore = 0;
+            gameRound = 1;
+           return alert ("You win the first to five!");
+          }
+
+          else if (computerScore === 5){
+            playerScore = 0;
+            computerScore = 0;
+            gameRound = 1;
+           return alert ("You lose the best of five...");
+          }
         }
+
+        // for (let i = 1; i < 6; i++){
+        //   console.log("Game " + i);
+        //   console.log(oneRound(playerSelection, computerSelection));
+        // }
 
       }
 
+      const playerSelection = "rock";
       const computerSelection = computerPlay();
 
-      console.log(oneRound(playerSelection, computerSelection));
-
+      game();
 
 
     </script>
