@@ -105,28 +105,28 @@
       }
 
       // plays a first to five game and resets on either overall player win or computer win
-      function game(){
-        computerPlay();
+      // function game(){
+      //   computerPlay();
         
-        while (playerScore < 6 || computerScore < 6){
-          console.log("Game " + gameRound);
-          gameRound++; 
-          console.log(oneRound(playerSelection, computerSelection));
+      //   while (playerScore < 6 || computerScore < 6){
+      //     console.log("Game " + gameRound);
+      //     gameRound++; 
+      //     console.log(oneRound(playerSelection, computerSelection));
           
-          if (playerScore === 5){
-            playerScore = 0;
-            computerScore = 0;
-            gameRound = 1;
-           return alert ("You win the first to five!");
-          }
+      //     if (playerScore === 5){
+      //       playerScore = 0;
+      //       computerScore = 0;
+      //       gameRound = 1;
+      //      return alert ("You win the first to five!");
+      //     }
 
-          else if (computerScore === 5){
-            playerScore = 0;
-            computerScore = 0;
-            gameRound = 1;
-           return alert ("You lose the best of five...");
-          }
-        }
+      //     else if (computerScore === 5){
+      //       playerScore = 0;
+      //       computerScore = 0;
+      //       gameRound = 1;
+      //      return alert ("You lose the best of five...");
+      //     }
+      //   }
 
         // for (let i = 1; i < 6; i++){
         //   console.log("Game " + i);
