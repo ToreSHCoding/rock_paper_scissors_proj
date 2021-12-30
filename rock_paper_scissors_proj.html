@@ -8,6 +8,9 @@
 </head>
 <body>
   <h1>Rock Paper Scissors Javascript</h1>
+  <button id="rockbtn">Rock</button>
+  <button id="paperbtn">Paper</button>
+  <button id="scissorsbtn">Scissors</button>
     <script>
      
       let computerScore = 0;
@@ -133,13 +136,16 @@
         //   console.log(oneRound(playerSelection, computerSelection));
         // }
 
-      }
+      // }
 
       const playerSelection = "rock";
       const computerSelection = computerPlay();
 
-      game();
+      // game();
 
+      //------------- DOM ---------------\\
+      const rockbtn = document.querySelector('#rockbtn');
+      rockbtn.addEventListener('click', oneRound("rock"));
 
     </script>
 </body>
