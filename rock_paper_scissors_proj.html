@@ -47,7 +47,8 @@
 
         // makes the playerSelection case-insensitive
 
-        playerSelection = prompt("Choose either Rock, Paper, or Scissors.").toLowerCase();
+        // playerSelection = prompt("Choose either Rock, Paper, or Scissors.").toLowerCase(); 
+        playerSelection = playerSelection.toLowerCase();
 
         if (playerSelection === computerSelection){
           return "It is a tie."
