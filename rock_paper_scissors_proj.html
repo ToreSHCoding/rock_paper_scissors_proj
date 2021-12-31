@@ -146,7 +146,19 @@
 
       //------------- DOM ---------------\\
       const rockbtn = document.querySelector('#rockbtn');
-      rockbtn.addEventListener('click', oneRound("rock"));
+      rockbtn.addEventListener('click', () => {
+       console.log(oneRound("rock"));
+      });
+
+      const paperbtn = document.querySelector('#paperbtn');
+      paperbtn.addEventListener('click', () => {
+       console.log(oneRound("paper"));
+      });
+
+      const scissorsbtn = document.querySelector('#scissorsbtn');
+      scissorsbtn.addEventListener('click', () => {
+       console.log(oneRound("scissors"));
+      });
 
     </script>
 </body>
