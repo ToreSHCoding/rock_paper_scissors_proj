@@ -92,8 +92,12 @@
         return "You win! Scissors beats Paper"
         }
        
-        else 
-        return "You did not select Rock, Paper, or Scissors!"
+        else {
+        return "You did not select Rock, Paper, or Scissors!"}
+
+        if (playerScore === 5 || computerScore === 5) {
+          finalResults();
+        }
         // if (
         //   (playerSelection === "rock" && computerSelection === "paper") ||
         //   (playerSelection === "paper" && computerSelection === "scissors") ||
@@ -147,6 +151,14 @@
       const computerSelection = computerPlay();
 
       // game();
+
+      function finalResults() {
+        if (playerScore > computerScore) {
+          console.log("You win the first to five!");
+        } else {
+          console.log("You lose the first to five!");
+        }
+      }
 
       //------------- DOM ---------------\\
       const rockbtn = document.querySelector('#rockbtn');
