@@ -11,6 +11,10 @@
   <button id="rockbtn">Rock</button>
   <button id="paperbtn">Paper</button>
   <button id="scissorsbtn">Scissors</button>
+
+  <div id="results">
+
+  </div>
     <script>
      
       let computerScore = 0;
@@ -146,19 +150,23 @@
 
       //------------- DOM ---------------\\
       const rockbtn = document.querySelector('#rockbtn');
-      rockbtn.addEventListener('click', () => {
-       console.log(oneRound("rock"));
+      rockbtn.addEventListener('click', () => { 
+       results.innerHTML = oneRound("rock");
       });
 
       const paperbtn = document.querySelector('#paperbtn');
       paperbtn.addEventListener('click', () => {
-       console.log(oneRound("paper"));
+        results.innerHTML = oneRound("paper");
       });
 
       const scissorsbtn = document.querySelector('#scissorsbtn');
       scissorsbtn.addEventListener('click', () => {
-       console.log(oneRound("scissors"));
+        results.innerHTML = oneRound("scissors");
       });
+      
+      const results = document.querySelector('#results');
+      const result = document.createElement('div');
+      results.append(result);
 
     </script>
 </body>
