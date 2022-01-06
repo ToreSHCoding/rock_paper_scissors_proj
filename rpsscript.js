@@ -1,4 +1,5 @@
 
+
 let computerScore = 0;
 let playerScore = 0;
 let gameRound = 1;
@@ -25,6 +26,7 @@ function computerPlay(){
 function oneRound(playerSelection, computerSelection){
 
   finalResult();
+
   // allow user to enter string in the form of Rock, Paper, or Scissors.
   // allow the bot to enter same type of string
   // let rock = 1, let paper = 2, let scissors = 3
@@ -33,6 +35,7 @@ function oneRound(playerSelection, computerSelection){
   // this declaration makes computerSelection return a random value by using the computerPlay function every time the oneRound function is executed
   computerSelection = computerPlay();
 
+  // showPlayerScore();
   // makes the playerSelection case-insensitive
 
   // playerSelection = prompt("Choose either Rock, Paper, or Scissors.").toLowerCase(); 
@@ -140,21 +143,28 @@ const computerSelection = computerPlay();
 const rockbtn = document.querySelector('#rockbtn');
 rockbtn.addEventListener('click', () => { 
  roundResult.textContent = oneRound("rock");
+ showPlayerScore();
 });
 
 const paperbtn = document.querySelector('#paperbtn');
 paperbtn.addEventListener('click', () => {
   roundResult.textContent = oneRound("paper");
+  showPlayerScore();
+
 });
 
 const scissorsbtn = document.querySelector('#scissorsbtn');
 scissorsbtn.addEventListener('click', () => {
   roundResult.textContent = oneRound("scissors");
+  showPlayerScore();
+
 });
 
 const roundResult = document.querySelector('#round-result');
 
-const finalOutcome = document.querySelector('#final-result');
-finalOutcome.textContent = playerScore;
+function showPlayerScore() {
 
+const playerResult = document.querySelector('#player-result');
+playerResult.textContent = playerScore;
 
+}
