@@ -25,8 +25,6 @@ function computerPlay(){
 // Plays one round of RPS and returns who won
 function oneRound(playerSelection, computerSelection){
 
-  finalResult();
-
   // allow user to enter string in the form of Rock, Paper, or Scissors.
   // allow the bot to enter same type of string
   // let rock = 1, let paper = 2, let scissors = 3
@@ -35,7 +33,6 @@ function oneRound(playerSelection, computerSelection){
   // this declaration makes computerSelection return a random value by using the computerPlay function every time the oneRound function is executed
   computerSelection = computerPlay();
 
-  // showPlayerScore();
   // makes the playerSelection case-insensitive
 
   // playerSelection = prompt("Choose either Rock, Paper, or Scissors.").toLowerCase(); 
@@ -94,13 +91,18 @@ function oneRound(playerSelection, computerSelection){
 }
 
 function finalResult() {
-  if (playerScore === 5) {
-    alert("You win the first to five!");
+  if (playerScore === 5 && playerScore > computerScore) {
+     endResult.textContent = "You win the first to five!";
+     return restart();
 
-  } else if (computerScore === 5) {
-    alert("You lose the first to five!");
+
+  } else if (computerScore === 5 && playerScore < computerScore) {
+     endResult.textContent = "You lose the first to five...";
+     return restart();
   }
 }
+
+
 
 // plays a first to five game and resets on either overall player win or computer win
 function game(){
@@ -143,28 +145,50 @@ const computerSelection = computerPlay();
 const rockbtn = document.querySelector('#rockbtn');
 rockbtn.addEventListener('click', () => { 
  roundResult.textContent = oneRound("rock");
+ finalResult();
  showPlayerScore();
+ showComputerScore();
 });
 
 const paperbtn = document.querySelector('#paperbtn');
 paperbtn.addEventListener('click', () => {
   roundResult.textContent = oneRound("paper");
+  finalResult();
   showPlayerScore();
-
+  showComputerScore();
 });
 
 const scissorsbtn = document.querySelector('#scissorsbtn');
 scissorsbtn.addEventListener('click', () => {
   roundResult.textContent = oneRound("scissors");
+  finalResult();
   showPlayerScore();
-
+  showComputerScore();
 });
 
 const roundResult = document.querySelector('#round-result');
 
 function showPlayerScore() {
 
-const playerResult = document.querySelector('#player-result');
-playerResult.textContent = playerScore;
+  const playerResult = document.querySelector('#player-result');
+  playerResult.textContent = `Player: ${playerScore}`;
+}
 
+function showComputerScore() {
+
+  const computerResult = document.querySelector('#computer-result');
+  computerResult.textContent = `Computer: ${computerScore}`;
+}
+
+const endResult = document.querySelector("#end-result");
+
+function restart(){
+const restartBtn = document.querySelector('#restart-btn');
+restartBtn.removeAttribute('disabled');
+restartBtn.addEventListener('click', () => {
+  roundResult.textContent = "Choose your stance";
+  playerScore = 0;
+  computerScore = 0;
+  endResult.textContent = '';
+});
 }
