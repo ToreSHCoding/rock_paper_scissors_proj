@@ -26,6 +26,7 @@ function computerPlay(){
 // Plays one round of RPS and returns who won
 function oneRound(playerSelection, computerSelection){
 
+
   // allow user to enter string in the form of Rock, Paper, or Scissors.
   // allow the bot to enter same type of string
   // let rock = 1, let paper = 2, let scissors = 3
@@ -91,18 +92,57 @@ function oneRound(playerSelection, computerSelection){
 
 }
 
+function stanceImg(playerSelection, computerSelection){
+  switch (playerSelection)
+  {
+    case "rock":
+    playerStance.textContent = "👊";
+    break;
+
+    case "paper":
+      playerStance.textContent = "🖐";
+    break;
+
+    case "scissors":
+      playerStance.textContent = "🖖";
+    break;
+
+  }
+
+  switch (computerSelection)
+  {
+    case "rock":
+      computerStance.textContent = "👊";
+    break;
+
+    case "paper":
+      computerStance.textContent = "🖐";
+    break;
+
+    case "scissors":
+      computerStance.textContent = "🖖";
+    break;
+
+  } 
+}
+
+
 // shows the final results of the first to five and gives option to restart game
 function finalResult() {
   if (playerScore === 5 && playerScore > computerScore) {
      endResult.textContent = "You win the first to five!";
      restartBtn.removeAttribute('disabled');
-     rpsbtn.disabled = true;
+     rockbtn.disabled = true;
+     paperbtn.disabled = true;
+     scissorsbtn.disabled = true;
 
 
   } else if (computerScore === 5 && playerScore < computerScore) {
      endResult.textContent = "You lose the first to five...";
      restartBtn.removeAttribute('disabled');
-     rpsbtn.disabled = true;
+     rockbtn.disabled = true;
+     paperbtn.disabled = true;
+     scissorsbtn.disabled = true;
 
   }
 }
@@ -147,7 +187,9 @@ const computerSelection = computerPlay();
 
 
 //------------- DOM ---------------\\
-const rpsbtn = document.querySelectorAll('.rpsbtn');
+const playerStance = document.querySelector('#player-stance');
+const computerStance = document.querySelector('#computer-stance');
+
 
 const rockbtn = document.querySelector('#rockbtn');
 rockbtn.addEventListener('click', () => { 
@@ -204,5 +246,7 @@ function restartFunc() {
   roundResult.textContent = "Choose your stance";
   endResult.textContent = '';
   restartBtn.disabled = true;
-  rpsbtn.disabled = false;
+  rockbtn.disabled = false;
+  paperbtn.disabled = false;
+  scissorsbtn.disabled = false;
 }
