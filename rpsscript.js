@@ -4,6 +4,7 @@ let computerScore = 0;
 let playerScore = 0;
 let gameRound = 1;
 
+
 // bot randomly returns either rock, paper, or scissors
 function computerPlay(){
   let botHandPosition = Math.floor(Math.random()*3)+1;
@@ -90,15 +91,19 @@ function oneRound(playerSelection, computerSelection){
 
 }
 
+// shows the final results of the first to five and gives option to restart game
 function finalResult() {
   if (playerScore === 5 && playerScore > computerScore) {
      endResult.textContent = "You win the first to five!";
-     return restart();
+     restartBtn.removeAttribute('disabled');
+     rpsbtn.disabled = true;
 
 
   } else if (computerScore === 5 && playerScore < computerScore) {
      endResult.textContent = "You lose the first to five...";
-     return restart();
+     restartBtn.removeAttribute('disabled');
+     rpsbtn.disabled = true;
+
   }
 }
 
@@ -142,6 +147,8 @@ const computerSelection = computerPlay();
 
 
 //------------- DOM ---------------\\
+const rpsbtn = document.querySelectorAll('.rpsbtn');
+
 const rockbtn = document.querySelector('#rockbtn');
 rockbtn.addEventListener('click', () => { 
  roundResult.textContent = oneRound("rock");
@@ -168,27 +175,34 @@ scissorsbtn.addEventListener('click', () => {
 
 const roundResult = document.querySelector('#round-result');
 
+const playerResult = document.querySelector('#player-result');
 function showPlayerScore() {
 
-  const playerResult = document.querySelector('#player-result');
   playerResult.textContent = `Player: ${playerScore}`;
 }
 
+const computerResult = document.querySelector('#computer-result');
 function showComputerScore() {
 
-  const computerResult = document.querySelector('#computer-result');
   computerResult.textContent = `Computer: ${computerScore}`;
 }
 
 const endResult = document.querySelector("#end-result");
 
-function restart(){
+
 const restartBtn = document.querySelector('#restart-btn');
-restartBtn.removeAttribute('disabled');
 restartBtn.addEventListener('click', () => {
-  roundResult.textContent = "Choose your stance";
+  restartFunc();
+});
+
+// function that restarts game when restartBtn is clicked
+function restartFunc() {
   playerScore = 0;
   computerScore = 0;
+  playerResult.textContent = `Player: ${playerScore}`;
+  computerResult.textContent = `Computer: ${computerScore}`
+  roundResult.textContent = "Choose your stance";
   endResult.textContent = '';
-});
+  restartBtn.disabled = true;
+  rpsbtn.disabled = false;
 }
