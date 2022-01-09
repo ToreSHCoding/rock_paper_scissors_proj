@@ -6,27 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="rpsscript.js" defer></script>
   <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <link rel="stylesheet" href="rpsstyles.css">
 <body>
-  <h1>Rock Paper Scissors Javascript</h1>
+  <h1>Rock Paper Scissors</h1>
+  <div id="end-result">Who will be the victor of the first to five?</div>
+  <div id="round-result">Choose your stance</div>
   <div id="stance-icons">
-    <div id="player-stance">🤜</div>
-    <div id="computer-stance">🤛</div>
-
-  </div>
-  <button class="rpsbtn" id="rockbtn">Rock</button>
-  <button class="rpsbtn" id="paperbtn">Paper</button>
-  <button class="rpsbtn" id="scissorsbtn">Scissors</button>
-
-  <div id="results">
-    <div id="round-result">Choose your stance</div>
-    <div id="player-vs-comp"> 
-      <div id="player-result"></div>
-      <div id="computer-result"></div>
+    <div>
+      <div class="stance" id="player-stance">🤜</div>
+      <div class="pvc" id="player-result">Player: 0</div>
     </div>
-    <div id="end-result"></div>
+    <div>
+      <div class="stance" id="computer-stance">🤛</div>
+      <div class="pvc" id="computer-result">Computer: 0</div>
+    </div>
+  </div>
+  <div id="stance-buttons">
+    <button class="rpsbtn" id="rockbtn">Rock</button>
+    <button class="rpsbtn" id="paperbtn">Paper</button>
+    <button class="rpsbtn" id="scissorsbtn">Scissors</button>
+  </div>
+
+  <div id="outcome">
     <button disabled=disabled id="restart-btn">Retry</button>
   </div>
+
+  <footer>
+    ToreSH Coding
+  </footer>
 </body>
 </html>

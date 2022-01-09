@@ -23,9 +23,28 @@ function computerPlay(){
   
 }
 
+
 // Plays one round of RPS and returns who won
 function oneRound(playerSelection, computerSelection){
+  
 
+    switch (playerSelection)
+    {
+      case "rock":
+        playerStance.textContent = "👊";
+      break;
+  
+      case "paper":
+        playerStance.textContent = "🖐";
+      break;
+  
+      case "scissors":
+        playerStance.textContent = "🖖";
+      break;
+  
+    }
+  
+  
 
   // allow user to enter string in the form of Rock, Paper, or Scissors.
   // allow the bot to enter same type of string
@@ -34,6 +53,23 @@ function oneRound(playerSelection, computerSelection){
   
   // this declaration makes computerSelection return a random value by using the computerPlay function every time the oneRound function is executed
   computerSelection = computerPlay();
+
+  switch (computerSelection)
+  {
+    case "rock":
+      computerStance.textContent = "👊";
+    break;
+
+    case "paper":
+      computerStance.textContent = "🖐";
+    break;
+
+    case "scissors":
+      computerStance.textContent = "🖖";
+    break;
+
+  } 
+  
 
   // makes the playerSelection case-insensitive
 
@@ -74,6 +110,7 @@ function oneRound(playerSelection, computerSelection){
   } else {
   return "You did not select Rock, Paper, or Scissors!"}
 
+
   // if (
   //   (playerSelection === "rock" && computerSelection === "paper") ||
   //   (playerSelection === "paper" && computerSelection === "scissors") ||
@@ -92,39 +129,7 @@ function oneRound(playerSelection, computerSelection){
 
 }
 
-function stanceImg(playerSelection, computerSelection){
-  switch (playerSelection)
-  {
-    case "rock":
-    playerStance.textContent = "👊";
-    break;
 
-    case "paper":
-      playerStance.textContent = "🖐";
-    break;
-
-    case "scissors":
-      playerStance.textContent = "🖖";
-    break;
-
-  }
-
-  switch (computerSelection)
-  {
-    case "rock":
-      computerStance.textContent = "👊";
-    break;
-
-    case "paper":
-      computerStance.textContent = "🖐";
-    break;
-
-    case "scissors":
-      computerStance.textContent = "🖖";
-    break;
-
-  } 
-}
 
 
 // shows the final results of the first to five and gives option to restart game
@@ -150,38 +155,39 @@ function finalResult() {
 
 
 // plays a first to five game and resets on either overall player win or computer win
-function game(){
-  computerPlay();
+// code does not work properly anymore. only here for reference
+// function game(){
+//   computerPlay();
   
-  while (playerScore < 6 || computerScore < 6){
-    console.log("Game " + gameRound);
-    gameRound++; 
-    console.log(oneRound(playerSelection, computerSelection));
+//   while (playerScore < 6 || computerScore < 6){
+//     console.log("Game " + gameRound);
+//     gameRound++; 
+//     console.log(oneRound(playerSelection, computerSelection));
     
-    if (playerScore === 5){
-      playerScore = 0;
-      computerScore = 0;
-      gameRound = 1;
-     return alert ("You win the first to five!");
-    }
+//     if (playerScore === 5){
+//       playerScore = 0;
+//       computerScore = 0;
+//       gameRound = 1;
+//      return alert ("You win the first to five!");
+//     }
 
-    else if (computerScore === 5){
-      playerScore = 0;
-      computerScore = 0;
-      gameRound = 1;
-     return alert ("You lose the best of five...");
-    }
-  }
+//     else if (computerScore === 5){
+//       playerScore = 0;
+//       computerScore = 0;
+//       gameRound = 1;
+//      return alert ("You lose the best of five...");
+//     }
+//   }
 
-  for (let i = 1; i < 6; i++){
-    console.log("Game " + i);
-    console.log(oneRound(playerSelection, computerSelection));
-  }
+//   for (let i = 1; i < 6; i++){
+//     console.log("Game " + i);
+//     console.log(oneRound(playerSelection, computerSelection));
+//   }
 
-}
+// }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
+// const playerSelection = "rock";
+// const computerSelection = computerPlay();
 
 // game();
 
@@ -241,10 +247,12 @@ restartBtn.addEventListener('click', () => {
 function restartFunc() {
   playerScore = 0;
   computerScore = 0;
+  playerStance.textContent = "🤜"
+  computerStance.textContent = "🤛"
   playerResult.textContent = `Player: ${playerScore}`;
   computerResult.textContent = `Computer: ${computerScore}`
   roundResult.textContent = "Choose your stance";
-  endResult.textContent = '';
+  endResult.textContent = 'Who will become the victor of the first to five?';
   restartBtn.disabled = true;
   rockbtn.disabled = false;
   paperbtn.disabled = false;
