@@ -31,15 +31,15 @@ function oneRound(playerSelection, computerSelection){
     switch (playerSelection)
     {
       case "rock":
-        playerStance.textContent = "👊";
+        playerStance.textContent = "🗿";
       break;
   
       case "paper":
-        playerStance.textContent = "🖐";
+        playerStance.textContent = "📄";
       break;
   
       case "scissors":
-        playerStance.textContent = "🖖";
+        playerStance.textContent = "✂";
       break;
   
     }
@@ -57,15 +57,15 @@ function oneRound(playerSelection, computerSelection){
   switch (computerSelection)
   {
     case "rock":
-      computerStance.textContent = "👊";
+      computerStance.textContent = "🗿";
     break;
 
     case "paper":
-      computerStance.textContent = "🖐";
+      computerStance.textContent = "📄";
     break;
 
     case "scissors":
-      computerStance.textContent = "🖖";
+      computerStance.textContent = "✂";
     break;
 
   } 
