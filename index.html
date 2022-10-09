@@ -10,31 +10,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
-  <h1>Rock Paper Scissors</h1>
-  <hr>
-  <div id="end-result">Who will be the victor of the first to five?</div>
-  <div id="round-result">Choose your stance</div>
-  <div id="stance-icons">
-    <div>
-      <div class="stance" id="player-stance">🤜</div>
-      <div class="pvc" id="player-result">Player: 0</div>
+  <div class="main-container">
+      <h1>Rock Paper Scissors</h1>
+    <hr>
+    <div id="end-result">Who will be the victor of the first to five?</div>
+    <div id="round-result">Choose your stance</div>
+    <div id="stance-icons">
+      <div class="stance-container">
+        <div class="stance" id="player-stance">🤜</div>
+        <div class="pvc" id="player-result">Player: 0</div>
+      </div>
+      <div class="stance-container">
+        <div class="stance" id="computer-stance">🤛</div>
+        <div class="pvc" id="computer-result">Computer: 0</div>
+      </div>
     </div>
-    <div>
-      <div class="stance" id="computer-stance">🤛</div>
-      <div class="pvc" id="computer-result">Computer: 0</div>
+    <div id="stance-buttons">
+      <button class="rpsbtn" id="rockbtn">Rock</button>
+      <button class="rpsbtn" id="paperbtn">Paper</button>
+      <button class="rpsbtn" id="scissorsbtn">Scissors</button>
     </div>
-  </div>
-  <div id="stance-buttons">
-    <button class="rpsbtn" id="rockbtn">Rock</button>
-    <button class="rpsbtn" id="paperbtn">Paper</button>
-    <button class="rpsbtn" id="scissorsbtn">Scissors</button>
-  </div>
 
-  <div id="outcome">
-    <button disabled=disabled id="restart-btn">Retry</button>
+    <div id="outcome">
+      <button disabled=disabled id="restart-btn">Retry</button>
+    </div>
   </div>
 
   <footer>
